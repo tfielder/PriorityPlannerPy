@@ -1,5 +1,5 @@
 from django import forms
-from .models import ItemCollection
+from .models import CollectionItem, ItemCollection
 
 class ItemCollectionForm(forms.ModelForm):
 
@@ -10,3 +10,15 @@ class ItemCollectionForm(forms.ModelForm):
             "title",
             "description"
         ]
+
+
+class CollectionItemForm(forms.ModelForm):
+
+    class Meta:
+        model = CollectionItem
+
+        fields = [
+            "title",
+            "description"
+        ]
+        widgets = {'itemCollection': forms.Select(),}
