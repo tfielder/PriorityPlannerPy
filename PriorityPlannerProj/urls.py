@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from itemCollectionApp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", views.home, name="home"),
+    path("home", views.home, name="home"),
+    path("about", views.about, name="about"),
+    path("collections", views.collections, name="collections"),
+    path("create-collection", views.create_collection, name="create-collection"),
+    #path("collections/<int:collection_id>/", views.collection_detail, name="collection_detail"),
 ]

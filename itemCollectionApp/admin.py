@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import CollectionItem, ItemCollection
 
-# Register your models here.
+admin.site.register(ItemCollection)
+admin.site.register(CollectionItem)
