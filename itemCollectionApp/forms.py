@@ -16,9 +16,9 @@ class CollectionItemForm(forms.ModelForm):
 
     class Meta:
         model = CollectionItem
+        exclude = ('itemCollection',)
 
         fields = [
             "title",
             "description"
         ]
-        widgets = {'itemCollection': forms.Select(),}

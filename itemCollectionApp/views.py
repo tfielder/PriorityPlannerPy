@@ -38,10 +38,17 @@ def create_item(request, collection_id):
     form = CollectionItemForm(request.POST or None)
 
     if request.method == 'POST':
-        if form.is_valid():
-            form.save()
+        try: 
+            collection = ItemCollection.objects.get(id=collection_id)
+        except:
+            raise Http404('Collection not found')
 
-            return HttpResponseRedirect(reverse('collections'))
+        if form.is_valid():
+            form_data = form.save(commit = False)
+            form_data.itemCollection = collection
+            form_data.save()
+
+            return HttpResponseRedirect(reverse('collection_detail', kwargs={ 'collection_id': collection.id }))
 
     context['form'] = form
 
@@ -53,8 +60,13 @@ def collection_detail(request, collection_id):
         collection = ItemCollection.objects.get(id=collection_id)
     except:
         raise Http404('Collection not found')
+
+    try:
+        items = collection.items.all()
+    except:
+        raise Http404('Items not found')
     
-    return render(request, 'collection_detail.html', { 'collection': collection})
+    return render(request, 'collection_detail.html', { 'collection': collection, 'items': items})
 
 
 def item_detail(request, item_id):
