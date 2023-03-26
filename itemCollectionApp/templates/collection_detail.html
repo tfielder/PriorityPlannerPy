@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Detail here</h1>
+<h1>{{ collection.title }}</h1>
+<h3>{{ collection.description }}</h3>
+
+<h3>Items: </h3>
+
+<a href="{% url 'create-item' collection.id %}" class="button">Add an item</a>
+
+<div id="collectionItems">
+    {% for item in items %}
+        <div class="flexit-center">
+            <a href="">
+                <h3>{{item.title}}</h3>
+                <p>{{item.description}}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

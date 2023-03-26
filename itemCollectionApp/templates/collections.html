@@ -11,7 +11,9 @@
     <div id="collections">
         {% for collection in itemCollections %}
             <div class="flexit-center">
-                <h3>{{ collection.title }}</h3>
+                <a href="{% url 'collection_detail' collection.id %}">
+                    <h3>{{ collection.title }}</h3>
+                </a>
                 <p>{{ collection.description }}</p>
             </div>
         {% endfor %}
