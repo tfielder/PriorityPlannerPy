@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="flexit-column">
+    <h1 class="flexit-center">Collections</h1>
+  
+    <div class="flexit-center">
+        <a href="/create-collection" class="button">Add a collection</a>
+    </div>
+  
+    <div id="collections">
+        {% for collection in itemCollections %}
+            <div class="flexit-center">
+                <h3>{{ collection.title }}</h3>
+                <p>{{ collection.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+  
+  </div>
+
+{% endblock %}
