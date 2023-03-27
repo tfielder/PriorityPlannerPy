@@ -4,13 +4,18 @@
 <h1>{{ collection.title }}</h1>
 <h3>{{ collection.description }}</h3>
 
-<h2>Items: </h2>
+<div class="flexit-center">
+    <h2>Items: </h2>
+</div>
 
-<a href="{% url 'create-item' collection.id %}" class="button">Add an item</a>
+<div class="flexit-center">
+    <a href="{% url 'create-item' collection.id %}" class="button">Add an item</a>
+</div>
 
-<div id="collectionItems">
+
+<div id="collectionItems" class="flexit-column">
     {% for item in items %}
-        <div class="flexit-center">
+        <div class="">
             <h3>Title: {{item.title}}</h3>
             <p>Description: {{item.description}}</p>
         </div>
