@@ -27,4 +27,5 @@ urlpatterns = [
     path("collections/<int:collection_id>/", views.collection_detail, name="collection_detail"),
     path("collections/<int:collection_id>/create-item/", views.create_item, name="create-item"),
     path("collections/<int:collection_id>/items/<int:item_id>/", views.item_detail, name="item_detail"),
+    path("collections/<int:collection_id>/collection-sorter/", views.collection_sorter, name="collection_sorter")
 ]

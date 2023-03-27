@@ -11,7 +11,10 @@
 <div class="flexit-center">
     <a href="{% url 'create-item' collection.id %}" class="button">Add an item</a>
 </div>
-
+<br>
+<div class="flexit-center">
+    <a href="{% url 'collection_sorter' collection.id %}" class="button">Sort My Collection</a>
+</div>
 
 <div id="collectionItems" class="flexit-column">
     {% for item in items %}
