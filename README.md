@@ -4,6 +4,10 @@ A simple application created in Python to allow a user to quickly rank prioritie
 ## Author
 Tim Fielder
 
+## Link
+You can access this application here:
+[https://py-priority-planner.herokuapp.com/](https://py-priority-planner.herokuapp.com/)
+
 ## Tech
 This application leverages:
 * Django
