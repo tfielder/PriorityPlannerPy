@@ -10,10 +10,12 @@
   
     <div id="collections">
         {% for collection in itemCollections %}
-            <div class="flexit-center">
-                <a href="{% url 'collection_detail' collection.id %}">
-                    <h3>{{ collection.title }}</h3>
-                </a>
+            <div class="flexit-center flexit-column">
+                <h3>
+                    <a href="{% url 'collection_detail' collection.id %}">
+                        {{ collection.title }}
+                    </a>
+                </h3>
                 <p>{{ collection.description }}</p>
             </div>
         {% endfor %}

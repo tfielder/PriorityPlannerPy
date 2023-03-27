@@ -1,74 +1,86 @@
-// Color
-$light-blue: rgb(92, 142, 241);
-$dark-blue: rgb(58, 93, 161);
-$background-black: rgb(32, 33, 36);
-$white: rgb(232, 234, 237);
-
-
-// Main styles
+/* Main styles */
 body {
-    background-color: $background-black;
+    background-color: rgb(32, 33, 36);
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin: 1rem;
     padding: 0;
+}
+
+.main-head-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    bottom: 0%;
+    right: 2%;
+    color: rgb(232, 234, 237);
+    height: 2rem;
+    position: fixed;
+    text-align: right;
+    width: 100%;
 }
 
 a {
     color: white;
     text-decoration: none;
+}
 
-    &:hover {
-        color: $light-blue;
-    }
+a:hover {
+    color: rgb(92, 142, 241);
+}
 
-    &:visited {
-        color: $white;
+a:visited {
+    color: rgb(232, 234, 237);
+}
 
-        &:hover {
-            color: $light-blue;
-        }
-    }
+a:visited:hover {
+    color: rgb(92, 142, 241);
 }
 
 p {
-    color: $white;
+    color: rgb(232, 234, 237);
 }
 
 h1, h2, h3, h4 {
-    color: $white;
+    color: rgb(232, 234, 237);
 }
 
 button, .button {
-    background-color: $light-blue;
+    background-color: rgb(92, 142, 241);
     border: none;
     border-radius: 1.875rem;
-    color: $white;
+    color: rgb(232, 234, 237);
     cursor: pointer;
     font-weight: bold;
     padding: .5rem;
+}
 
-    &:hover {
-        background-color: $dark-blue;
-    }
+button:hover {
+    background-color: rgb(58, 93, 161);
+}
+
+.button:hover {
+    background-color: rgb(58, 93, 161);
 }
 
 label {
-    color: $white;
+    color: rgb(232, 234, 237);
 }
 
 ul {
-    color: $white;
+    color: rgb(232, 234, 237);
 }
 
 #main-header {
     background-color: black;
-    color: $white;
+    color: rgb(232, 234, 237);
     display: flex;
     padding: .5rem;
+}
 
-    a {
-        margin: 0 .5rem;
-    }
+#main-header a {
+    margin: 0 .5rem;
 }
 
 #main-content {
@@ -78,7 +90,7 @@ ul {
 #main-footer {
     background-color: black;
     bottom: 0;
-    color: $white;
+    color: rgb(232, 234, 237);
 
     position: absolute;
     
@@ -91,15 +103,15 @@ ul {
 }
 
 #main-title {
-    color: $light-blue;
+    color: rgb(92, 142, 241);
 }
 
 #hero-image {
     height: 20rem;
-    width: 100%;
+    width: auto;
 }
 
-.flex-it-column {
+.flexit-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,24 +144,28 @@ ul {
 }
 
 .blue {
-    color: $light-blue;
+    color: rgb(92, 142, 241);
 }
 
 .button-to-text {
-    background-color: $background-black;
-    color: $white;
+    background-color: rgb(32, 33, 36);
+    color: rgb(232, 234, 237);
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: normal;
     margin: 0;
     padding: 0;
-
-    &:hover {
-        background-color: $background-black;
-    }
 }
 
-// Sorting styles
+.button-to-text:hover {
+    background-color: rgb(32, 33, 36);
+}
+
+.site-title {
+    margin: .5rem;
+}
+
+/* Sorting styles */
 .decision-container, #final-results {
     align-items: center;
     display: flex;
@@ -157,5 +173,5 @@ ul {
 }
 
 .results-div {
-    color: $white;
+    color: rgb(232, 234, 237);
 }
