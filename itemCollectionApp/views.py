@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.core import serializers
 
 from .models import CollectionItem, ItemCollection
 from .forms import CollectionItemForm, ItemCollectionForm
@@ -76,3 +77,18 @@ def item_detail(request, item_id):
         raise Http404('Item not found')
 
     return render(request, 'item_detail.html', { 'item': item })
+
+def collection_sorter(request, collection_id):
+    try:
+        collection = ItemCollection.objects.get(id=collection_id)
+    except:
+        raise Http404('Collection not found')
+
+    try:
+        q_items = collection.items.all()
+    except:
+        raise Http404('Items not found')
+
+    items = serializers.serialize("json", q_items)
+
+    return render(request, 'collection_sorter.html', { 'unparsedItems': items })

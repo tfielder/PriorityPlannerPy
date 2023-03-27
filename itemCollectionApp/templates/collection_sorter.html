@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<script src="{% static 'sorter.js' %}"></script>
+
+<h1 class="flexit-center">Collection Sorter</h1>
+
+<p id="instructions" class="flexit-center align-center">You will be asked your preference on the items you have chosen for your collection. Ready to begin?</p>
+
+<div data-controller="sort" class="flexit-center">
+    <button type="button", id="continue-button", onclick="startSort({{ unparsedItems }})">Start sorting</button>
+</div>
+
+<div id="decision-box">
+</div>
+
+<div id="final-results">
+</div>
+
+{% endblock %}
