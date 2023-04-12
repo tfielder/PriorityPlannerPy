@@ -70,6 +70,20 @@ def collection_detail(request, collection_id):
     return render(request, 'collection_detail.html', { 'collection': collection, 'items': items})
 
 
+def delete_collection(request, collection_id):
+    try:
+        collection = ItemCollection.objects.get(id=collection_id)
+    except:
+        raise Http404('Item not found')
+
+    if request.method == "POST":
+        collection.delete()
+        return HttpResponseRedirect("/collections")
+    
+    return render(request, "collection_delete.html", {'collection_id': collection_id })
+    
+
+
 def item_detail(request, item_id):
     try:
         item = CollectionItem.objects.get(id=item_id)

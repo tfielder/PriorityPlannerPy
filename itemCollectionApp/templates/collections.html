@@ -17,7 +17,11 @@
                     </a>
                 </h3>
                 <p>{{ collection.description }}</p>
+                <a href="{% url 'collection_delete' collection.id %}" class="button delete-button-width">
+                    Delete
+                </a>
             </div>
+            <br />
         {% endfor %}
     </div>  
 </div>

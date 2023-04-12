@@ -46,6 +46,10 @@ h1, h2, h3, h4 {
     color: rgb(232, 234, 237);
 }
 
+.delete-button-width {
+    width: 3rem;
+}
+
 button, .button {
     background-color: rgb(92, 142, 241);
     border: none;
